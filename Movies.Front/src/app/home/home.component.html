@@ -1,0 +1,24 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">Release year</th>
+        <th scope="col">IMDB</th>
+        <th scope="col">Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let movie of movies; let i = index">
+        <th scope="row">{{movie.id}}</th>
+        <td>{{movie.title}}</td>
+        <td>{{movie.authorFirstName}} {{movie.authorLastName}}</td>
+        <td>{{movie.releaseYear}}</td>
+        <td>{{movie.imdbRating}}</td>
+        <td>
+          <a [routerLink]="'movies/'+ movie.id" class="btn btn-primary">details</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
